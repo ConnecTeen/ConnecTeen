@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MeditationSelectionActivity"
+    android:background="@drawable/background"
+    android:padding="60dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meditation"
+            android:textColor="@color/White"
+            android:fontFamily="@font/minionprobold"
+            android:textSize="35sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SELECT AN AMBIANCE"
+            android:textColor="#99FFFFFF"
+            android:fontFamily="@font/firasansregular"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:foregroundGravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewPagerMeditation"
+            android:overScrollMode="never"
+            android:clipToPadding="false">
+
+
+
+
+
+
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_marginBottom="30dp"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:textColor="@color/White"
+            android:fontFamily="@font/firasansregular"
+            android:id="@+id/btnSelect"
+            android:textSize="20sp"
+            android:background="@drawable/button_white_bordered"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
