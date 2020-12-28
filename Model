@@ -1,0 +1,29 @@
+package com.example.connecteen;
+
+public class Model {
+
+    private int imageMeditation;
+    private String titleMeditation;
+
+
+    public Model(int image, String title) {
+        this.imageMeditation = image;
+        this.titleMeditation = title;
+    }
+
+    public int getImageMeditation() {
+        return imageMeditation;
+    }
+
+    public void setImageMeditation(int imageMeditation) {
+        this.imageMeditation = imageMeditation;
+    }
+
+    public String getTitleMeditation() {
+        return titleMeditation;
+    }
+
+    public void setTitleMeditation(String titleMeditation) {
+        this.titleMeditation = titleMeditation;
+    }
+}
