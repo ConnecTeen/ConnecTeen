@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelaxationWelcomeActivity"
+    android:background="@color/RelaxationWelcomeBackground"
+    android:padding="40dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Relax with ConnecTeen"
+                android:textColor="@color/RelaxationWelcomeText"
+                android:textSize="35sp"
+                android:fontFamily="@font/burston"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take a deep breath... \n\nInhale peace, \n\nExhale happiness."
+                android:gravity="center"
+                android:textColor="#3c4043"
+                android:fontFamily="@font/minionproregular"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="A.D. Posey"
+                android:fontFamily="@font/minionproitalic"
+                android:textColor="#3c4043"
+                android:gravity="center"/>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/ic_favorite"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                app:tint="@color/RlaxationPrimaryDark"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center">
+
+
+            <Button
+                android:id="@+id/GetStartedButtonRelaxationWelcome"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:background="@drawable/relaxation_button1"
+                android:text="Get Started"
+                android:textColor="@color/RelaxationWelcomeBackground"
+                android:fontFamily="@font/minionprobold"
+                android:textSize="20sp"
+                android:textAllCaps="false"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
