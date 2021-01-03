@@ -1,0 +1,174 @@
+package com.example.connecteen;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MeditationTimeSelectionActivity extends AppCompatActivity {
+
+    Button FiveMinBtn;
+    Button FifteenMinBtn;
+    Button ThirtyMinBtn;
+    Button SixtyMinBtn;
+
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_meditation_time_selection);
+
+        FiveMinBtn = (Button) findViewById(R.id.fiveminbtn);
+        FifteenMinBtn = (Button) findViewById(R.id.fifteenminbtn);
+        ThirtyMinBtn = (Button) findViewById(R.id.thirtyminbtn);
+        SixtyMinBtn = (Button) findViewById(R.id.sixtyminutebtn);
+
+
+
+        FiveMinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle extras = getIntent().getExtras();
+                String Meditation = extras.getString("Value");
+                if (Meditation.equals("Campfire") ) {
+                    Intent Campfire5 = new Intent(view.getContext(), CampfireMeditation5Activity.class);
+                    view.getContext().startActivity(Campfire5);
+                }
+                if (Meditation.equals("Forest") ) {
+                    Intent Forest5 = new Intent(view.getContext(), ForestMeditation5Activity.class);
+                    view.getContext().startActivity(Forest5);
+                }
+                if (Meditation.equals("Ocean Waves") ) {
+                    Intent Ocean5 = new Intent(view.getContext(), OceanMeditation5Activity.class);
+                    view.getContext().startActivity(Ocean5);
+                }
+                if (Meditation.equals("Rain") ) {
+                    Intent Rain5 = new Intent(view.getContext(), RainMeditation5Activity.class);
+                    view.getContext().startActivity(Rain5);
+                }
+                if (Meditation.equals("City") ) {
+                    Intent City5 = new Intent(view.getContext(), CityMeditation5Activity.class);
+                    view.getContext().startActivity(City5);
+                }
+                if (Meditation.equals("Waterfall") ) {
+                    Intent Waterfall5 = new Intent(view.getContext(), WaterfallMeditation5Activity.class);
+                    view.getContext().startActivity(Waterfall5);
+                }
+            }
+        });
+
+
+        FifteenMinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle extras = getIntent().getExtras();
+                String Meditation = extras.getString("Value");
+                if (Meditation.equals("Campfire") ) {
+                    Intent Campfire5 = new Intent(view.getContext(), CampfireMeditation15Activity.class);
+                    view.getContext().startActivity(Campfire5);
+                }
+                if (Meditation.equals("Forest") ) {
+                    Intent Forest5 = new Intent(view.getContext(), ForestMeditation15Activity.class);
+                    view.getContext().startActivity(Forest5);
+                }
+                if (Meditation.equals("Ocean Waves") ) {
+                    Intent Ocean5 = new Intent(view.getContext(), OceanMeditation15Activity.class);
+                    view.getContext().startActivity(Ocean5);
+                }
+                if (Meditation.equals("Rain") ) {
+                    Intent Rain5 = new Intent(view.getContext(), RainMeditation15Activity.class);
+                    view.getContext().startActivity(Rain5);
+                }
+                if (Meditation.equals("City") ) {
+                    Intent City5 = new Intent(view.getContext(), CityMeditation15Activity.class);
+                    view.getContext().startActivity(City5);
+                }
+                if (Meditation.equals("Waterfall") ) {
+                    Intent Waterfall5 = new Intent(view.getContext(), WaterfallMeditation15Activity.class);
+                    view.getContext().startActivity(Waterfall5);
+                }
+            }
+        });
+
+        ThirtyMinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle extras = getIntent().getExtras();
+                String Meditation = extras.getString("Value");
+                if (Meditation.equals("Campfire") ) {
+                    Intent Campfire5 = new Intent(view.getContext(), CampfireMeditation30Activity.class);
+                    view.getContext().startActivity(Campfire5);
+                }
+                if (Meditation.equals("Forest") ) {
+                    Intent Forest5 = new Intent(view.getContext(), ForestMeditation30Activity.class);
+                    view.getContext().startActivity(Forest5);
+                }
+                if (Meditation.equals("Ocean Waves") ) {
+                    Intent Ocean5 = new Intent(view.getContext(), OceanMeditation30Activity.class);
+                    view.getContext().startActivity(Ocean5);
+                }
+                if (Meditation.equals("Rain") ) {
+                    Intent Rain5 = new Intent(view.getContext(), RainMeditation30Activity.class);
+                    view.getContext().startActivity(Rain5);
+                }
+                if (Meditation.equals("City") ) {
+                    Intent City5 = new Intent(view.getContext(), CityMeditation30Activity.class);
+                    view.getContext().startActivity(City5);
+                }
+                if (Meditation.equals("Waterfall") ) {
+                    Intent Waterfall5 = new Intent(view.getContext(), WaterfallMeditation30Activity.class);
+                    view.getContext().startActivity(Waterfall5);
+                }
+            }
+        });
+
+        SixtyMinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle extras = getIntent().getExtras();
+                String Meditation = extras.getString("Value");
+                if (Meditation.equals("Campfire") ) {
+                    Intent Campfire5 = new Intent(view.getContext(), CampfireMeditation60Activity.class);
+                    view.getContext().startActivity(Campfire5);
+                }
+                if (Meditation.equals("Forest") ) {
+                    Intent Forest5 = new Intent(view.getContext(), ForestMeditation60Activity.class);
+                    view.getContext().startActivity(Forest5);
+                }
+                if (Meditation.equals("Ocean Waves") ) {
+                    Intent Ocean5 = new Intent(view.getContext(), OceanMeditation60Activity.class);
+                    view.getContext().startActivity(Ocean5);
+                }
+                if (Meditation.equals("Rain") ) {
+                    Intent Rain5 = new Intent(view.getContext(), RainMeditation60Activity.class);
+                    view.getContext().startActivity(Rain5);
+                }
+                if (Meditation.equals("City") ) {
+                    Intent City5 = new Intent(view.getContext(), CityMeditation60Activity.class);
+                    view.getContext().startActivity(City5);
+                }
+                if (Meditation.equals("Waterfall") ) {
+                    Intent Waterfall5 = new Intent(view.getContext(), WaterfallMeditation60Activity.class);
+                    view.getContext().startActivity(Waterfall5);
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+    }
+}
