@@ -1,0 +1,168 @@
+package com.example.connecteen;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager2.widget.ViewPager2;
+
+import android.content.Intent;
+import android.icu.text.IDNA;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MusicSelectionActivity extends AppCompatActivity {
+
+    private MusicAdapter musicAdapter;
+    private LinearLayout layoutMusicIndicator;
+    private Button selectButtonMusic;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_music_selection);
+
+        layoutMusicIndicator = findViewById(R.id.layoutMusicIndicators);
+        selectButtonMusic = findViewById(R.id.btnSelectMusic);
+
+        setupMusicItems();
+
+        final ViewPager2 MusicViewPager = findViewById(R.id.MusicViewPager);
+        MusicViewPager.setAdapter(musicAdapter);
+
+        setupMusicIndicators();
+        setCurrentMusicIndicator(0);
+
+        MusicViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                setCurrentMusicIndicator(position);
+            }
+        });
+
+        selectButtonMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(MusicViewPager.getCurrentItem() + 1 < musicAdapter.getItemCount()) {
+                    if (musicAdapter.getItemCount() - MusicViewPager.getCurrentItem() == 5) {
+                        String Classical = "Classical";
+                        Intent intent = new Intent(getBaseContext(), ClassicalMusicSelectionActivity.class);
+                        intent.putExtra("Value", Classical);
+                        startActivity(intent);
+
+                    }
+                    if (musicAdapter.getItemCount() - MusicViewPager.getCurrentItem() == 4) {
+                        String Chill = "Chill";
+                        Intent intentone = new Intent(getBaseContext(), ChillMusicSelectionActivity.class);
+                        intentone.putExtra("Value", Chill);
+                        startActivity(intentone);
+
+                    }
+                    if (musicAdapter.getItemCount() - MusicViewPager.getCurrentItem() == 3) {
+                        String Jazz = "Light Jazz";
+                        Intent intentTwo = new Intent(getBaseContext(), JazzMusicSelectionActivity.class);
+                        intentTwo.putExtra("Value", Jazz);
+                        startActivity(intentTwo);
+
+                    }
+                    if (musicAdapter.getItemCount() - MusicViewPager.getCurrentItem() == 2) {
+                        String Pop = "Soft Pop";
+                        Intent intentThree = new Intent(getBaseContext(), PopMusicSelectionActivity.class);
+                        intentThree.putExtra("Value", Pop);
+                        startActivity(intentThree);
+
+                    }
+                } else {
+                    Intent intentFive = new Intent(getBaseContext(), ElectropopMusicSelectionActivity.class);
+                    String Electropop = "Electropop";
+                    intentFive.putExtra("Value", Electropop);
+                    startActivity(intentFive);
+
+                }
+            }
+        });
+    }
+
+    private void setupMusicItems() {
+        List<MusicItem> musicItems = new ArrayList<>();
+
+
+        MusicItem itemClassical = new MusicItem();
+        itemClassical.setTitle("Classical");
+        itemClassical.setImage(R.drawable.classical);
+
+        MusicItem itemChill = new MusicItem();
+        itemChill.setTitle("Chill");
+        itemChill.setImage(R.drawable.chill);
+
+        MusicItem itemJazz = new MusicItem();
+        itemJazz.setTitle("Light Jazz");
+        itemJazz.setImage(R.drawable.jazz);
+
+        MusicItem itemSoftPop = new MusicItem();
+        itemSoftPop.setTitle("Soft Pop");
+        itemSoftPop.setImage(R.drawable.softpop);
+
+        MusicItem itemElectropop = new MusicItem();
+        itemElectropop.setTitle("Electropop");
+        itemElectropop.setImage(R.drawable.electropop);
+
+
+
+        musicItems.add(itemClassical);
+        musicItems.add(itemChill);
+        musicItems.add(itemJazz);
+        musicItems.add(itemSoftPop);
+        musicItems.add(itemElectropop);
+
+        musicAdapter = new MusicAdapter(musicItems);
+
+    }
+
+    private void setupMusicIndicators(){
+        ImageView[] indicators = new ImageView[musicAdapter.getItemCount()];
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        layoutParams.setMargins(8,0,8,0);
+        for (int i = 0; i < indicators.length; i++){
+            indicators[i] = new ImageView(getApplicationContext());
+            indicators[i].setImageDrawable(ContextCompat.getDrawable(
+                    getApplicationContext(),
+                    R.drawable.onboarding_indicator_inactive
+            ));
+            indicators[i].setLayoutParams(layoutParams);
+            layoutMusicIndicator.addView(indicators[i]);
+        }
+    }
+
+    private void setCurrentMusicIndicator(int index) {
+        int childCount = layoutMusicIndicator.getChildCount();
+        for (int i = 0; i < childCount; i++){
+            ImageView imageView = (ImageView)layoutMusicIndicator.getChildAt(i);
+            if (i == index) {
+                imageView.setImageDrawable(
+                        ContextCompat.getDrawable(getApplicationContext(), R.drawable.onboarding_indicator_active)
+                );
+            } else {
+                imageView.setImageDrawable(
+                        ContextCompat.getDrawable(getApplicationContext(), R.drawable.onboarding_indicator_inactive)
+                );
+
+            }
+        }
+        if(index == musicAdapter.getItemCount()-1) {
+            selectButtonMusic.setText("Select");
+        }else {
+            selectButtonMusic.setText("Select");
+        }
+    }
+}
