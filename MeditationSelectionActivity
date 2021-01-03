@@ -1,0 +1,178 @@
+package com.example.connecteen;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager2.widget.ViewPager2;
+
+import android.content.Intent;
+import android.icu.text.IDNA;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MeditationSelectionActivity extends AppCompatActivity {
+
+    private MeditationAdapter meditationAdapter;
+    private LinearLayout layoutMeditationIndicator;
+    private Button selectButton;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_meditation_selection);
+
+        layoutMeditationIndicator = findViewById(R.id.layoutMeditationIndicators);
+        selectButton = findViewById(R.id.btnSelect);
+
+        setupMeditationItems();
+
+        final ViewPager2 MeditationViewPager = findViewById(R.id.MeditationViewPager);
+        MeditationViewPager.setAdapter(meditationAdapter);
+
+        setupMeditationIndicators();
+        setCurrentMeditationIndicator(0);
+
+        MeditationViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                setCurrentMeditationIndicator(position);
+            }
+        });
+
+        selectButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(MeditationViewPager.getCurrentItem() + 1 < meditationAdapter.getItemCount()) {
+                   if (meditationAdapter.getItemCount() - MeditationViewPager.getCurrentItem() == 6) {
+                       String Campfire = "Campfire";
+                       Intent intent = new Intent(getBaseContext(), MeditationTimeSelectionActivity.class);
+                       intent.putExtra("Value", Campfire);
+                       startActivity(intent);
+
+                   }
+                    if (meditationAdapter.getItemCount() - MeditationViewPager.getCurrentItem() == 5) {
+                        String Forest = "Forest";
+                        Intent intentone = new Intent(getBaseContext(), MeditationTimeSelectionActivity.class);
+                        intentone.putExtra("Value", Forest);
+                        startActivity(intentone);
+
+                    }
+                    if (meditationAdapter.getItemCount() - MeditationViewPager.getCurrentItem() == 4) {
+                        String Ocean = "Ocean Waves";
+                        Intent intentTwo = new Intent(getBaseContext(), MeditationTimeSelectionActivity.class);
+                        intentTwo.putExtra("Value", Ocean);
+                        startActivity(intentTwo);
+
+                    }
+                    if (meditationAdapter.getItemCount() - MeditationViewPager.getCurrentItem() == 3) {
+                        String Rain = "Rain";
+                        Intent intentThree = new Intent(getBaseContext(), MeditationTimeSelectionActivity.class);
+                        intentThree.putExtra("Value", Rain);
+                        startActivity(intentThree);
+
+                    }
+                    if (meditationAdapter.getItemCount() - MeditationViewPager.getCurrentItem() == 2) {
+                        String City = "City";
+                        Intent intentFour = new Intent(getBaseContext(), MeditationTimeSelectionActivity.class);
+                        intentFour.putExtra("Value", City);
+                        startActivity(intentFour);
+                    }
+
+                } else {
+                    Intent intentFive = new Intent(getBaseContext(), MeditationTimeSelectionActivity.class);
+                    String Waterfall = "Waterfall";
+                    intentFive.putExtra("Value", Waterfall);
+                    startActivity(intentFive);
+
+                }
+            }
+        });
+    }
+
+    private void setupMeditationItems() {
+        List<MeditationItem> meditationItems = new ArrayList<>();
+
+
+        MeditationItem itemCampfire = new MeditationItem();
+        itemCampfire.setTitle("Campfire");
+        itemCampfire.setImage(R.drawable.campfire);
+
+        MeditationItem itemForest = new MeditationItem();
+        itemForest.setTitle("Forest");
+        itemForest.setImage(R.drawable.forest);
+
+        MeditationItem itemOcean = new MeditationItem();
+        itemOcean.setTitle("Ocean");
+        itemOcean.setImage(R.drawable.ocean);
+
+        MeditationItem itemRain = new MeditationItem();
+        itemRain.setTitle("Rain");
+        itemRain.setImage(R.drawable.rain);
+
+        MeditationItem itemCity = new MeditationItem();
+        itemCity.setTitle("City");
+        itemCity.setImage(R.drawable.city);
+
+        MeditationItem itemWaterfall = new MeditationItem();
+        itemWaterfall.setTitle("Waterfall");
+        itemWaterfall.setImage(R.drawable.waterfall);
+
+
+        meditationItems.add(itemCampfire);
+        meditationItems.add(itemForest);
+        meditationItems.add(itemOcean);
+        meditationItems.add(itemRain);
+        meditationItems.add(itemCity);
+        meditationItems.add(itemWaterfall);
+
+        meditationAdapter = new MeditationAdapter(meditationItems);
+    }
+
+    private void setupMeditationIndicators(){
+        ImageView[] indicators = new ImageView[meditationAdapter.getItemCount()];
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        layoutParams.setMargins(8,0,8,0);
+        for (int i = 0; i < indicators.length; i++){
+            indicators[i] = new ImageView(getApplicationContext());
+            indicators[i].setImageDrawable(ContextCompat.getDrawable(
+                    getApplicationContext(),
+                    R.drawable.meditation_indicator_inactive
+            ));
+            indicators[i].setLayoutParams(layoutParams);
+            layoutMeditationIndicator.addView(indicators[i]);
+        }
+    }
+
+    private void setCurrentMeditationIndicator(int index) {
+        int childCount = layoutMeditationIndicator.getChildCount();
+        for (int i = 0; i < childCount; i++){
+            ImageView imageView = (ImageView)layoutMeditationIndicator.getChildAt(i);
+            if (i == index) {
+                imageView.setImageDrawable(
+                        ContextCompat.getDrawable(getApplicationContext(), R.drawable.meditation_indicator_active)
+                );
+            } else {
+                imageView.setImageDrawable(
+                        ContextCompat.getDrawable(getApplicationContext(), R.drawable.meditation_indicator_inactive)
+                );
+
+            }
+        }
+        if(index == meditationAdapter.getItemCount()-1) {
+            selectButton.setText("Select");
+        }else {
+            selectButton.setText("Select");
+        }
+    }
+}
