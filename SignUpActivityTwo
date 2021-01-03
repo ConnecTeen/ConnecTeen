@@ -1,0 +1,28 @@
+package com.example.connecteen;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+public class SignUpActivityTwo extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up_two);
+        Spinner states = findViewById(R.id.spinnerstates);
+        String[] stateslist = new String[]{"Choose your state...", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", "District of Columbia", "I don't live in the United States!"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, stateslist);
+        states.setAdapter(adapter);
+
+        Spinner relaxation = findViewById(R.id.spinnerrelaxation);
+        String[] relaxationlist = new String[]{"Choose your favorite way to relax...", "Games", "Relaxing Music", "Breathing Exercises"};
+
+        ArrayAdapter<String> adapter1 =  new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, relaxationlist);
+        relaxation.setAdapter(adapter1);
+
+    }
+}
