@@ -1,0 +1,61 @@
+package com.example.connecteen;
+
+import android.text.Layout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
+public class MusicAdapter extends RecyclerView.Adapter<MusicAdapter.MusicViewHolder> {
+
+    private List<MusicItem> musicItems;
+
+    public MusicAdapter(List<MusicItem> musicItems) {
+        this.musicItems = musicItems;
+    }
+
+    @NonNull
+    @Override
+    public MusicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MusicViewHolder(
+                LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.item_container_music, parent, false
+                )
+        );
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MusicViewHolder holder, int position) {
+        holder.setMusicData(musicItems.get(position));
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return musicItems.size();
+    }
+
+    class MusicViewHolder extends RecyclerView.ViewHolder {
+
+        private TextView textTitleMusic;
+        private ImageView imageMusic;
+
+        public MusicViewHolder(@NonNull View itemView) {
+            super(itemView);
+            textTitleMusic = itemView.findViewById(R.id.textMusicTitle);
+            imageMusic = itemView.findViewById(R.id.imageMusic);
+        }
+
+        void setMusicData(MusicItem musicItem){
+            textTitleMusic.setText(musicItem.getTitle());
+            imageMusic.setImageResource(musicItem.getImage());
+        }
+    }
+}
+
