@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context="com.example.connecteen.SignUpActivityTwo"
+    android:scrollbarStyle="outsideOverlay"
+    android:background="@color/RelaxationWelcomeBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_phone"
+            app:tint="@color/RlaxationPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/createAccountTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/firasansbold"
+                android:text="@string/create_account"
+                android:textColor="@color/RlaxationPrimaryDark"
+                android:textSize="40sp" />
+
+            <ImageView
+                android:id="@+id/numberimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/signuptwobackground"
+                app:tint="@color/RlaxationPrimaryDark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="40dp">
+
+            <com.hbb20.CountryCodePicker
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="true"
+                app:ccp_showNameCode="true"
+                app:ccp_showFullName="true"
+                android:background="@drawable/green_border"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                app:startIconDrawable="@drawable/ic_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconTint="@color/RlaxationPrimaryDark"
+                android:textColorHint="@color/RlaxationPrimaryDark"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/RlaxationPrimaryDark"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeColor="@color/RlaxationPrimaryDark"
+                android:background="@drawable/green_border">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phonetxtboxsignup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="phone"
+                    android:layout_marginTop="10dp"/>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/RlaxationPrimaryDark"
+                android:text="Choose Your Profile Picture:"
+                android:textAlignment="gravity"
+                android:gravity="center_vertical"
+                android:textSize="17sp"/>
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/ic_profile_pic"
+                android:layout_marginStart="60dp"
+                android:layout_marginLeft="60dp"
+                app:tint="@color/RlaxationPrimaryDark" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+
+            <Spinner
+                android:id="@+id/spinnerstates"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:spinnerMode="dropdown"
+                android:padding="0dp"
+                android:textAlignment="gravity"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/RlaxationPrimaryDark"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="When's your birthday?"
+                android:textSize="17sp"
+                android:textColor="@color/RlaxationPrimaryDark"/>
+
+          <DatePicker
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:datePickerMode="spinner"
+              android:calendarViewShown="false"
+              android:backgroundTint="@color/RlaxationPrimaryDark"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:layout_marginTop="20dp"/>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_marginTop="20dp">
+
+           <Spinner
+               android:id="@+id/spinnerrelaxation"
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:spinnerMode="dropdown"
+               android:padding="5dp"
+               android:textAlignment="gravity"
+               android:layout_gravity="center"
+               android:backgroundTint="@color/RlaxationPrimaryDark"/>
+
+       </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:background="@drawable/relaxation_button1"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/RelaxationWelcomeBackground"
+            android:elevation="5dp"
+            android:textSize="20sp"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</ScrollView>
