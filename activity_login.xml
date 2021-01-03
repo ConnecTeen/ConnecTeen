@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/RelaxationWelcomeBackground"
+    android:padding="40dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_phone"
+                app:tint="@color/RlaxationPrimaryDark" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/RlaxationPrimaryDark"
+                android:fontFamily="@font/firasansregular"
+                android:text="Sign In"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/RlaxationPrimaryDark"
+                android:textSize="17sp"
+                android:fontFamily="@font/firasansregular"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                app:startIconDrawable="@drawable/ic_mail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconTint="@color/RlaxationPrimaryDark"
+                android:textColorHint="@color/RlaxationPrimaryDark"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/RlaxationPrimaryDark"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeColor="@color/RlaxationPrimaryDark"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usernametxtboxsignup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="@color/RlaxationPrimaryDark"
+                android:textSize="17sp"
+                android:fontFamily="@font/firasansregular"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                app:startIconDrawable="@drawable/ic_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:startIconTint="@color/RlaxationPrimaryDark"
+                android:textColorHint="@color/RlaxationPrimaryDark"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/RlaxationPrimaryDark"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeColor="@color/RlaxationPrimaryDark"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordtxtboxsignup1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember Me"
+                android:buttonTint="@color/RlaxationPrimaryDark"
+                android:textColor="@color/RlaxationPrimaryDark"
+                android:fontFamily="@font/firasansregular"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Forgot Password?"
+                android:textColor="@color/RlaxationPrimaryDark"
+                android:fontFamily="@font/firasansregular"
+                android:gravity="right"/>
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:background="@drawable/relaxation_button1"
+                android:textSize="20sp"
+                android:textColor="@color/RelaxationWelcomeBackground"
+                android:fontFamily="@font/firasansregular"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
