@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.connecteen.MyProfileActivity"
+    android:background="@drawable/myprofilebackground">
+
+    <ImageView
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_phone"
+        app:tint="@color/White" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="0sp"
+        android:layout_marginRight="1dp"
+        app:cardCornerRadius="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textViewUsernameMyProfile"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171"
+        android:layout_marginLeft="22dp">
+
+        <ImageView
+            android:id="@+id/profilepic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <TextView
+        android:id="@+id/textViewUsernameMyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textColor="@color/Gray"
+        android:textSize="20sp"
+        app:fontFamily="@font/firasansbook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.24" />
+
+    <ImageView
+        android:id="@+id/imageViewLocation"
+        android:layout_width="15dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUsernameMyProfile"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+    <TextView
+        android:id="@+id/textViewStateMyProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="194dp"
+        android:layout_marginRight="194dp"
+        android:layout_marginBottom="509dp"
+        android:text="State"
+        app:fontFamily="@font/firasansbook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLocation"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUsernameMyProfile"
+        app:layout_constraintVertical_bias="0.009" />
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewLocation"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0dp">
+
+
+            <TextView
+                android:id="@+id/textViewAccountHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="327dp"
+                android:layout_marginRight="327dp"
+                android:layout_marginBottom="400dp"
+                android:text="Account"
+                android:textColor="@color/Gray"
+                android:textSize="17sp"
+                app:fontFamily="@font/firasansbold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/accountdivider"
+                android:layout_width="360dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginRight="31dp"
+                android:layout_marginBottom="429dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewAccountHeader"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/imageViewMailMyProfile"
+                android:layout_width="71dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="325dp"
+                android:layout_marginRight="325dp"
+                android:layout_marginBottom="362dp"
+                android:contentDescription="mail"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accountdivider"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_mail" />
+
+            <TextView
+                android:id="@+id/textViewEmailMyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginRight="250dp"
+                android:layout_marginBottom="370dp"
+                android:text="Email Address"
+                android:textColor="@color/Gray"
+                android:textSize="15sp"
+                app:fontFamily="@font/firasansregular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.128"
+                app:layout_constraintStart_toEndOf="@+id/imageViewMailMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/accountdivider"
+                app:layout_constraintVertical_bias="0.684" />
+
+            <TextView
+                android:id="@+id/textViewEditEmailMyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginRight="250dp"
+                android:layout_marginBottom="315dp"
+                android:text="emailaddress@example.com"
+                android:textColor="@color/Gray"
+                android:textSize="14sp"
+                app:fontFamily="@font/firasanslight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.016"
+                app:layout_constraintStart_toEndOf="@+id/imageViewMailMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEmailMyProfile"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageViewPhoneMyProfile"
+                android:layout_width="71dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginRight="9dp"
+                android:layout_marginBottom="248dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textViewPhoneMyProfile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewMailMyProfile"
+                app:layout_constraintVertical_bias="0.09"
+                app:srcCompat="@drawable/ic_phone" />
+
+            <TextView
+                android:id="@+id/textViewPhoneMyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="217dp"
+                android:layout_marginRight="217dp"
+                android:layout_marginBottom="290dp"
+                android:text="Phone Number"
+                android:textColor="@color/Gray"
+                android:textSize="15sp"
+                app:fontFamily="@font/firasansregular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.428"
+                app:layout_constraintStart_toEndOf="@+id/imageViewPhoneMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEditEmailMyProfile"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/textViewEditPhoneMyProfile"
+                android:layout_width="82dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginEnd="219dp"
+                android:layout_marginRight="219dp"
+                android:layout_marginBottom="264dp"
+                android:text="+1 123456789"
+                android:textColor="@color/Gray"
+                android:textSize="14sp"
+                app:fontFamily="@font/firasanslight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.222"
+                app:layout_constraintStart_toEndOf="@+id/imageViewPhoneMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPhoneMyProfile"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageViewBirthdayMyProfile"
+                android:layout_width="71dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="325dp"
+                android:layout_marginRight="325dp"
+                android:layout_marginBottom="160dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewPhoneMyProfile"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_cake" />
+
+            <TextView
+                android:id="@+id/textViewBirthdayMyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="250dp"
+                android:layout_marginRight="250dp"
+                android:layout_marginBottom="203dp"
+                android:text="Birthday"
+                android:textColor="@color/Gray"
+                android:textSize="15sp"
+                app:fontFamily="@font/firasansregular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageViewBirthdayMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEditPhoneMyProfile"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textViewEditBirthdayMyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginEnd="200dp"
+                android:layout_marginRight="200dp"
+                android:layout_marginBottom="184dp"
+                android:text="January 1st, 2000"
+                android:textColor="@color/Gray"
+                android:textSize="14sp"
+                app:fontFamily="@font/firasanslight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.25"
+                app:layout_constraintStart_toEndOf="@+id/imageViewBirthdayMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textViewBirthdayMyProfile"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageViewRelaxationMyProfile"
+                android:layout_width="71dp"
+                android:layout_height="73dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="322dp"
+                android:layout_marginRight="322dp"
+                android:layout_marginBottom="74dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewBirthdayMyProfile"
+                app:srcCompat="@drawable/ic_outline_spa_24" />
+
+            <TextView
+                android:id="@+id/textViewRelaxationMyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="160dp"
+                android:layout_marginRight="160dp"
+                android:layout_marginBottom="110dp"
+                android:text="Relaxation Preference"
+                android:textColor="@color/Gray"
+                android:textSize="15sp"
+                app:fontFamily="@font/firasansregular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageViewRelaxationMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEditBirthdayMyProfile"
+                app:layout_constraintVertical_bias="0.857" />
+
+            <TextView
+                android:id="@+id/textViewEditRelaxationMyProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="96dp"
+                android:text="You didn't choose one yet!"
+                android:textColor="@color/Gray"
+                android:textSize="14sp"
+                app:fontFamily="@font/firasanslight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.071"
+                app:layout_constraintStart_toEndOf="@+id/imageViewRelaxationMyProfile"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRelaxationMyProfile"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/signoutbuttonmyprofile"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/RlaxationPrimaryDark"
+                android:fontFamily="@font/firasansbold"
+                android:text="Sign Out"
+                android:textAllCaps="false"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewRelaxationMyProfile" />
+
+            <Button
+                android:id="@+id/deleteaccountmyprofile"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="80dp"
+                android:backgroundTint="@color/RlaxationPrimaryDark"
+                android:fontFamily="@font/firasansbold"
+                android:text="Delete Account"
+                android:textAllCaps="false"
+                android:textColor="@color/White"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageViewRelaxationMyProfile" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
