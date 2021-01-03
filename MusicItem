@@ -1,0 +1,24 @@
+package com.example.connecteen;
+
+public class MusicItem {
+
+    private int imageMusic;
+    private String titleMusic;
+
+    public int getImage() {
+        return imageMusic;
+    }
+
+    public void setImage(int image) {
+        this.imageMusic = image;
+    }
+
+    public String getTitle() {
+        return titleMusic;
+    }
+
+    public void setTitle(String title) {
+        this.titleMusic = title;
+    }
+
+}
