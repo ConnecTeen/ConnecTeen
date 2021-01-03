@@ -1,0 +1,25 @@
+package com.example.connecteen;
+
+public class MeditationItem {
+
+    private int imageMeditation;
+    private String titleMeditation;
+
+    public int getImage() {
+        return imageMeditation;
+    }
+
+    public void setImage(int image) {
+        this.imageMeditation = image;
+    }
+
+    public String getTitle() {
+        return titleMeditation;
+    }
+
+    public void setTitle(String title) {
+        this.titleMeditation = title;
+    }
+
+}
+
