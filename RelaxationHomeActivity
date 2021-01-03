@@ -1,0 +1,47 @@
+package com.example.connecteen;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
+public class RelaxationHomeActivity extends AppCompatActivity {
+
+    private BottomSheetBehavior bottomSheetBehavior;
+    LinearLayout layoutBreathing;
+    LinearLayout layoutMeditation;
+    LinearLayout layoutSounds;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_relaxation_home);
+
+        LinearLayout linearLayout = findViewById(R.id.design_bottom_sheet);
+
+        bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+
+        LinearLayout layoutMeditation = findViewById(R.id.layoutMeditation);
+        layoutMeditation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MeditationSelectionActivity.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
+        LinearLayout layoutSounds = findViewById(R.id.layoutSounds);
+        layoutSounds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), MusicSelectionActivity.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+    }
+}
